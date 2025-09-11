@@ -7,9 +7,10 @@
 
 @font-face {
   font-family: 'Samakarn';
-  src: url('/src/assets/Samakarn.ttf') format('truetype');
+  src: url('/src/Fonts/Samakarn.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 .sama{
   font-family: 'Samakarn';

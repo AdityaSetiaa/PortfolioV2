@@ -4,3 +4,13 @@
   
   color: transparent;
 }
+
+@font-face {
+  font-family: 'Samakarn';
+  src: url('/src/assets/Samakarn.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.sama{
+  font-family: 'Samakarn';
+}

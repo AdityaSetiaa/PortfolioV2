@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+.adi{
+    font-family: monospace;
+    padding: 1px;
+    border-radius: 2ch;
+}
+
+::selection {
+  
+  color: #f5d016;
+}
+
+@font-face {
+  font-family: 'Samakarn';
+  src: url('/src/Fonts/Samakarn.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.sama{
+  font-family: 'Samakarn';
+}
+
+/* Scrollbar container */
+.scrollable {
+  max-height: 16rem; /* adjust as needed */
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #1f2937 #111827;
+  padding: 2px; /* thumb track */
+}
+
+/* Webkit browsers (Chrome, Edge, Safari) */
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: #1f2937; /* zinc-800 track */
+  border-radius: 4px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #111827; /* zinc-900 thumb */
+  border-radius: 4px;
+  border: 2px solid #1f2937; /* optional padding effect */
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: #0f172a; /* darker on hover */
+}

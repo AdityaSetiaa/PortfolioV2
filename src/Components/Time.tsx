@@ -1,4 +1,3 @@
-import ToggleButton from "./toggle button";
 import { motion, useMotionValue, animate } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -56,7 +55,6 @@ function Time() {
       <div className="h-full w-full flex flex-col items-center justify-center gap-2 p-4 adi my-2">
         <div className="flex flex-row gap-4 items-center">
           <h1 className="text-zinc-200 text-3xl">{time}</h1>
-          <ToggleButton />
         </div>
         <h2 className="text-zinc-400 text-sm">
           {day}, {today}

@@ -32,10 +32,9 @@ export default function Socials() {
       className="group relative border h-14 w-14 adi border-zinc-700/50 rounded bg-zinc-900/50 backdrop-blur-sm shadow-lg transition-all duration-200  flex items-center justify-center p-2 hover:scale-110" 
       key={tool.name}
     >
-      <img src={tool.icon} draggable={false} // <--- stops the ghost drag
+      <img src={tool.icon} draggable={false}
   onDragStart={(e) => e.preventDefault()}  alt={tool.name} className="w-12 bg-white adi h-12 transition-transform duration-200 group-hover:scale-110" />
       
-      {/* Tooltip that appears on hover */}
       <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-zinc-800 border border-zinc-700 rounded text-xs text-zinc-200 whitespace-nowrap opacity-0 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:-translate-y-1">
         {tool.name}
         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-zinc-700"></div>

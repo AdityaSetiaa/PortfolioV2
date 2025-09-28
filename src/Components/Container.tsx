@@ -12,7 +12,6 @@ function Container() {
   const { Darkbackground } = useToggle();
   const parentRef = useRef(null);
 
-  // motion values for draggable box
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 

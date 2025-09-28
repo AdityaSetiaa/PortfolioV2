@@ -8,7 +8,7 @@ function About() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Check if device is desktop (screen width > 768px and not touch device)
+   
     const checkDevice = () => {
       const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       const isWideScreen = window.innerWidth > 768;
@@ -21,7 +21,6 @@ function About() {
     return () => window.removeEventListener('resize', checkDevice);
   }, []);
 
-  // Motion props only applied if it's a desktop device
   const motionProps = isDesktop ? {
     drag: true,
     style: { x, y, position: 'relative' as const, zIndex: 10 },

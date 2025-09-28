@@ -24,39 +24,15 @@ function Container() {
       }`}
     >
       <div
- className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr_1fr] gap-4 h-full">
-        <div className="h-full flex flex-col gap-4">
-           <div
-           
-            className="flex-[7] flex transform transition-all delay-75 duration-300 adi border border-zinc-800"
-          >
-            <motion.div  drag
-            style={{ x, y,position: 'relative', zIndex: 10  }}
-            dragElastic={0}
-            dragConstraints={parentRef}
-            dragMomentum={false}
-            whileTap={{ cursor: "grabbing" }}
-            onDragEnd={() => {
-              animate(x, 0, { type: "spring", stiffness: 300, damping: 30 });
-              animate(y, 0, { type: "spring", stiffness: 300, damping: 30 });
-            }} className="w-full h-full flex items-center p-2 justify-center adi ">
-              <Tech />
-            </motion.div>
-          </div>
-
-          <div 
-            className={`flex-[3] flex transform transition-all delay-75 duration-300`}
-          >
-            <h1 className="text-white text-4xl md:text-7xl md:text-center sm:text-center px-8 lg:text-left p-1 tracking-tighter font-bold uppercase items-center justify-center font-mono leading-none md:justify-center w-full h-full">
-              Tools I use
-            </h1>
-          </div>
-        </div>
-
-        <div className="h-full min-h-[96vh] grid grid-rows-6 gap-4">
+        className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr_1fr] gap-4 h-full"
+      >
+        {/* About Section - Order 1 on mobile */}
+        <div className="order-1 md:order-2 h-full min-h-[96vh] grid grid-rows-6 gap-4">
           <div
             className={`row-span-2 border w-[100%] mx-auto h-full flex adi transition-all delay-60 duration-300 border-zinc-800`}
-          ><About /></div>
+          >
+            <About />
+          </div>
           <div className="row-span-3 border w-[100%] mx-auto h-full flex items-center justify-center adi border-zinc-800 transition-all delay-60 duration-300">
             <div className="w-full h-full flex items-center justify-center adi p-1shadow-[inset_9px_9px_60px_rgba(255,255,255,0.05),inset_-9px_-9px_60px_rgba(0,0,0,0.6)]">
               
@@ -70,19 +46,55 @@ function Container() {
           </div>
         </div>
 
-        <div className="md:h-[] lg:h-full md:col-span-2 lg:col-span-1">
-          <div className="flex flex-col md:flex-row lg:flex-col gap-4 w-full h-full sm:order-1 md:order-2 lg:order-1">
-            <div className="flex-1 adi flex items-center justify-center border sm:order-2 md:order-1 transform transition-all delay-60 duration-300 border-zinc-800"><NewsTrends/></div>
+        {/* Tech Section - Order 2 on mobile */}
+         <div className="order-2 md:order-1 h-full flex flex-col gap-4">
+          <div
+            className="order-2 md:order-1 flex-[7] flex transform transition-all delay-75 duration-300 adi border border-zinc-800"
+          >
+            <motion.div 
+              ref={parentRef}
+              drag
+              style={{ x, y, position: 'relative', zIndex: 10 }}
+              dragElastic={0}
+              dragConstraints={parentRef}
+              dragMomentum={false}
+              whileTap={{ cursor: "grabbing" }}
+              onDragEnd={() => {
+                animate(x, 0, { type: "spring", stiffness: 300, damping: 30 });
+                animate(y, 0, { type: "spring", stiffness: 300, damping: 30 });
+              }} 
+              className="w-full h-full flex items-center p-2 justify-center adi"
+            >
+              <Tech />
+            </motion.div>
+          </div>
+
+          <div 
+            className={`order-1 md:order-2 flex-[3] flex transform transition-all delay-75 duration-300`}
+          >
+            <h1 className="text-white text-4xl md:text-7xl md:text-center sm:text-center px-8 lg:text-left p-1 tracking-tighter font-bold uppercase items-center justify-center font-mono leading-none md:justify-center w-full h-full">
+              Tools I use
+            </h1>
+          </div>
+        </div>
+
+        {/* Right sidebar - Order 3 on mobile */}
+        <div className="order-3 md:h-[] lg:h-full md:col-span-2 lg:col-span-1">
+          <div className="flex flex-col md:flex-row lg:flex-col gap-4 w-full h-full">
+            <div className="flex-1 adi flex items-center justify-center border transform transition-all delay-60 duration-300 border-zinc-800">
+              <NewsTrends/>
+            </div>
             {/*inner grid*/}
-            <div className="flex-1 flex items-center justify-center lg:order-2">
+            <div className="flex-1 flex items-center justify-center">
               <div className="flex-col grid grid-rows-5 md:flex-row lg:flex-col gap-4 w-full h-full">
                 <div className="flex-1 adi flex items-center justify-center border border-zinc-800 row-span-2 transform transition-all delay-60 duration-300">
                   <div className="w-full h-full flex items-center justify-center adi shadow-[inset_9px_9px_60px_rgba(255,255,255,0.05),inset_-9px_-9px_60px_rgba(0,0,0,0.6)]">
                     <Time />
                   </div>
                 </div>
-                <div className="flex-1 adi flex items-center justify-center border row-span-3 transform transition-all delay-60 duration-300 "><Socials/>
-                  </div>
+                <div className="flex-1 adi flex items-center justify-center border row-span-3 transform transition-all delay-60 duration-300">
+                  <Socials/>
+                </div>
               </div>
             </div>
           </div>
